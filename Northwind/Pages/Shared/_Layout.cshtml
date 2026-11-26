@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Northwind</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Northwind.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+    <header>
+        <nav class="site-nav">
+            <div class="nav-inner">
+                <a class="brand" asp-area="" asp-page="/Index" aria-label="Northwind home">
+                    <span class="brand-mark" aria-hidden="true">n</span>
+                    <span>northwind<span class="brand-period">.</span></span>
+                </a>
+                <button class="nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation"
+                        aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links collapse" id="main-navigation">
+                    <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                    <a class="nav-link" asp-area="" asp-page="/Customers">Our customers</a>
+                    <a class="nav-hello" asp-area="" asp-page="/Customers">Say hello <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-shell">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <a class="footer-brand" asp-area="" asp-page="/Index">northwind<span class="brand-period">.</span></a>
+            <span>A little place for good people <span aria-hidden="true">♡</span></span>
+            <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
